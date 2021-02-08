@@ -6,8 +6,9 @@
   "author": "jonashenrique90 <jonas.herique90@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --watchAll",
-    "test:staged": "jest --passWithNoTests"
+    "test": "jest --watch --silent --colors --noStackTrace",
+    "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace",
+    "test:ci": "jest --coverage"
   },
   "standard": {
     "env": ["jest"]
@@ -21,7 +22,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test:ci"
     }
   },
   "devDependencies": {
