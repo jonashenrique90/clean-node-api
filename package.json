@@ -13,7 +13,9 @@
     "test:ci": "yarn test -- --coverage"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "lint-staged": {
     "*.js": [
@@ -33,5 +35,8 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
     "standard": "^16.0.3"
+  },
+  "dependencies": {
+    "validator": "^13.5.2"
   }
 }
