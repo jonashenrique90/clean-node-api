@@ -89,6 +89,11 @@ describe('Auth UseCase', () => {
     const promise = sut.auth('any_email@gmail.com', 'password')
     expect(promise).rejects.toThrow()
   })
+  it('should throw if no dependecy is provided', async () => {
+    const sut = new AuthUseCase()
+    const promise = sut.auth('any_email@gmail.com', 'password')
+    expect(promise).rejects.toThrow()
+  })
   it('should return null if invalid email is provided', async () => {
     const { sut, loadUserByEmailRepositorySpy } = makeSut()
     loadUserByEmailRepositorySpy.user = null
